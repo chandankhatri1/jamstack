@@ -1,0 +1,28 @@
+---
+title: Daily Breifing
+layout: base.njk
+pagination:
+    data: news
+    size: 1
+    alias: news
+permalink: /{{news.country}}/index.html
+---
+
+<div class="container">
+            <h1>This is a page for you!</h1>
+            <div class="vibe">you are great!</div>
+            <div class="love">
+                &hearts;
+            </div>
+</div>
+<ul>
+{% for article in news.articles%}
+<li> 
+    <h2> 
+        <a href="{{ article.url }}">{{ article.title }}</a>
+    </h2>
+    <span>{{ article.source.name }} - {{article.publishedAt}} </span>
+</li>
+{% endfor %}
+</ul>
+<script src="/js/vibe.js"></script>
